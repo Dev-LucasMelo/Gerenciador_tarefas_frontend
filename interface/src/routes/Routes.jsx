@@ -7,7 +7,9 @@ import {
     Routes
 } from 'react-router-dom';
 
-const Router = () => {
+const Router = ({database}) => {
+    console.log(database)
+    
     return (
         <BrowserRouter>
             <Routes>
