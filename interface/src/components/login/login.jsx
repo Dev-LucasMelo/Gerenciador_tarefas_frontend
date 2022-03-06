@@ -40,7 +40,7 @@ function Login({ api }) {
             <h1 className='tittle-form' >Login</h1>
           </div>
           <div>
-            <form className='form' action="http://localhost:4000/login" method='post' >
+            <form className='form'>
               <p className='tittle-input'>Username</p>
               <input
 
@@ -63,7 +63,7 @@ function Login({ api }) {
               <br></br>
               <br></br>
               <br></br>
-              <input className='submit' type="submit" value="Login" onClick={loginplat} />
+              <button className='submit' onClick={loginplat} >Login</button>
             </form>
           </div>
         </div>

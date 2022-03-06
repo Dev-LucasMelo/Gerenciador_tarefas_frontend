@@ -1,0 +1,100 @@
+.cadastro-component{
+    border: 1px solid #3f3f40;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    margin: 20px auto;
+    padding: 0px 0px;
+    box-shadow: 10px 10px 14px rgba(0, 0, 0, 0.705);
+}
+.header-cadastro {
+    background-color: #3f3f40;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0 0 0;
+} 
+.cadastro-icon {
+    border: 1px solid #f1f0f2;
+    background-color: #f1f0f2;
+    font-size: 24px;
+    text-align: center;
+    padding: 5px;
+    border-radius: 50%;
+}
+.tittle-cadastro {
+    color: #f1f0f2;
+    text-align: center;
+}
+.form-cadastro{
+    width: 100%;
+    background-color: #f1f0f2;
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+}
+.input-cadastro{
+    font-size: 19px;
+    border: 2px solid ;
+    background-color: transparent;
+    width: 90%;
+    margin: 0px auto;
+    border-radius: 500px;
+    text-indent: 10px;
+}
+
+.cadastro-indent {
+    text-indent: 10px;
+}
+.sex-form {
+    margin: 8px auto;
+    border: 2px solid #3f3f40;
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.legend-sex-form{
+    text-align: center;
+    font-weight: bold;
+}
+.finish-form {
+    background-color:#088c37 ;
+    font-size: 22px;
+    width: max-content;
+    color: white;
+    border: 1px solid #088c37;
+    padding: 1px 24px;
+    border-radius: 500px;
+    transition: .4s;
+    margin: 10px auto;
+}
+.finish-form:hover {
+    background-color: white;
+    border: 1px solid #088c37;
+    color:#088c37;
+    transition: .4s;
+}
+.finish-form:disabled {
+    opacity: 0.5;
+}
+
+
+/*Classes que servem como variaveis*/
+.validacao {
+    color: red;
+    text-indent: 20px;
+}
+.some{
+    display: none;
+}
+.closed{
+    border: 2px solid red;
+}
+.open {
+    border: 2px solid #088c37
+}
