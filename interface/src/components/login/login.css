@@ -1,0 +1,112 @@
+.login-component {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    height: 80vh;
+    border: 1px solid rgba(0, 0, 0, 0.384);
+    margin: 50px auto;
+    box-shadow: 15px 20px 10px rgba(0, 0, 0, 0.274);
+}
+.form-box {
+    width: 55%;
+    background-color: #f1f0f2;
+    height: 100%;
+    padding: 0px 100px 0px 40px;
+}
+.logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    font-size: 50px;
+    border: 1px solid black;
+    width: max-content;
+    border-radius: 50%;
+    background-color: #f1f0f2;
+    transition: .3s;
+}
+.logo:hover {
+    background-color: #088c37;
+    transition: .3s;
+}
+.tittle-form {
+    font-size: 40px;
+    margin: 7px 0px;
+}
+.form {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    
+}
+.tittle-input{
+    font-size: 20px;
+    margin: 15px 0px;
+}
+.tittle-input::first-letter{
+    color: #3f3f40;
+    font-weight: bold;
+    font-size: 22px;
+}
+.input{
+    font-size: 18px;
+    border: none;
+    background-color: transparent;
+    border-bottom: 2px solid;
+}
+.input:focus {
+    box-shadow: none;
+    border-bottom: 2px solid;
+    outline: 0;   
+}
+.submit {
+    background-color:#088c37 ;
+    font-size: 22px;
+    width: max-content;
+    color: white;
+    border: 1px solid #088c37;
+    padding: 1px 24px;
+    border-radius: 500px;
+    transition: .4s;
+}
+.submit:hover{
+    background-color: white;
+    border: 1px solid #088c37;
+    color:#088c37;
+    transition: .4s;
+
+}
+
+.link-cadastro {
+    text-align: end;
+    font-weight: bold;
+    transition: .3s;
+    font-size: 18px;
+}
+.link-cadastro:hover {
+    transition: .3s;
+    font-weight: bolder;
+    font-size: 19px;
+}
+.content-login {
+    width: 45%;
+    height: 100%;
+    background-color: #3f3f40;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.github {
+    font-size: 80px;
+    border: 2px solid white;
+    border-radius: 50%;
+    background-color: white;
+    transition: .3s;
+}
+.github:hover {
+    transition: .3s;
+    font-size: 100px;
+}

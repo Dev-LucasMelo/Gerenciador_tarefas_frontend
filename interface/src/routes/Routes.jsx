@@ -6,14 +6,16 @@ import {
     Route,
     Routes
 } from 'react-router-dom';
+import Login from '../components/login/login';
+
 
 const Router = ({database}) => {
-    console.log(database)
     
+
     return (
         <BrowserRouter>
             <Routes>
-                <Route path='/' element={'Login'} />
+                <Route path='/' element={<Login api={database} />} />
                 <Route path='/cadastro' element={'cadastro'} />
                 <Route path='/Finish' element={'finish'} />
                 <Route path='/plat' element={'plataforma'} />

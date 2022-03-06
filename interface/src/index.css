@@ -1,1 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Tinos&display=swap');
 
+* {
+    scroll-behavior: smooth; 
+    color: #0B090d;
+    font-family: 'Tinos', serif;
+}
+body {
+    background: url(https://static.vecteezy.com/system/resources/previews/000/461/362/original/workspace-in-room-vector.jpg);
+    background-size: cover;
+}
+a {
+    text-decoration: none;
+}
+label,input{
+    cursor: pointer;
+}
