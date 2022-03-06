@@ -1,0 +1,20 @@
+.finish-component {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border: 2px solid ;
+    width: 40%;
+    margin: 100px auto;
+    border-radius: 50px;
+    height: max-content;
+    padding: 10px 0px;
+}
+.finish-icon {
+    font-size: 70px;
+    margin: 10px;
+    border-bottom: 1px solid black;
+    width: 90%;
+    
+}

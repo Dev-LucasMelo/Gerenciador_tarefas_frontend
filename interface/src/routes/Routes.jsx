@@ -5,8 +5,12 @@ import {
     Route,
     Routes
 } from 'react-router-dom';
+
+//COMPONENTS
 import Cadastro from '../components/cadastro/cadastro';
+import Finish from '../components/finish/finish';
 import Login from '../components/login/login';
+
 
 
 const Router = ({database}) => {
@@ -17,7 +21,7 @@ const Router = ({database}) => {
             <Routes>
                 <Route path='/' element={<Login api={database} />} />
                 <Route path='/cadastro' element={<Cadastro />} />
-                <Route path='/Finish' element={'finish'} />
+                <Route path='/Finish' element={<Finish />} />
                 <Route path='/plat' element={'plataforma'} />
                 <Route path='/erro' element={'erro ao fazer login'} />
             </Routes>
