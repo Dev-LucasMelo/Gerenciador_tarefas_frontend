@@ -13,14 +13,14 @@ import Login from '../components/login/login';
 
 
 
-const Router = ({database}) => {
-    
+const Router = ({ database }) => {
+
 
     return (
         <BrowserRouter>
             <Routes>
-                <Route path='/' element={<Login api={database} />} />
-                <Route path='/cadastro' element={<Cadastro />} />
+                <Route path='/' element={<Login api={database} />}/>
+                <Route path='/cadastro' element={<Cadastro api={database} />} />
                 <Route path='/Finish' element={<Finish />} />
                 <Route path='/plat' element={'plataforma'} />
                 <Route path='/erro' element={'erro ao fazer login'} />

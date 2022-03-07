@@ -7,7 +7,8 @@ import { BiFemaleSign, BiMaleSign } from 'react-icons/bi'
 
 import './cadastro.css'
 
-const Cadastro = () => {
+const Cadastro = ({ api }) => {
+
 
     //ARMAZENA DADOS SENHA E CONFIRMAÇÂO
     const [password, setpassowrd] = useState('')
@@ -33,16 +34,31 @@ const Cadastro = () => {
 
 
     //VALIDAÇÃO 
+    //Verificação de usuario no banco de dados
+
+    const searchUserRegistered = api.find(element => element.username === username)
+
+    var userunregistered = ''
+
+    if (searchUserRegistered === undefined) {
+        userunregistered = true
+    } else {
+
+        userunregistered = false
+    }
+
+
 
     //USER 
     var validuser = ''
 
-    if (username.length >= 8) {
+    if (username.length >= 8 && userunregistered === true) {
         validuser = true
 
     } else {
         validuser = false
     }
+
 
     //PASSWORD
 
@@ -88,18 +104,18 @@ const Cadastro = () => {
     if (validuser === true &&
         validpassword === true &&
         validconfirm === true &&
-        validemail === true){
-            
-            validsubmit = true
+        validemail === true) {
+
+        validsubmit = true
 
     } else {
-        validsubmit = false 
+        validsubmit = false
     }
 
-    
 
-    
-    
+
+
+
     return (
         <div className='cadastro-component'>
             <header className='header-cadastro'>
@@ -115,10 +131,10 @@ const Cadastro = () => {
                     className={`input-cadastro ${validuser === true ? 'open' : 'closed'}`}
                     placeholder='Your Username'
                     name='username'
-                    onChange={ userdata }
+                    onChange={userdata}
                     required />
 
-                <span id='user' className={`validacao ${validuser === true ? 'some' : ''}`}>*Must be at least 8 digits</span>
+                <span id='user' className={`validacao ${validuser === true ? 'some' : ''}`}>{userunregistered === true ? " *Must be at least 8 digits" : "*Username already registered"}</span>
 
                 <p className='tittle-input cadastro-indent' >Password</p>
                 <input
@@ -127,8 +143,9 @@ const Cadastro = () => {
                     className={`input-cadastro ${validpassword === true ? 'open' : 'closed'}`}
                     placeholder='Your Password'
                     name='password'
-                    onChange={ passworddata }
-                    required />
+                    onChange={passworddata}
+                    required
+                />
 
                 <span className={`validacao ${validpassword === true ? 'some' : ''}`}>*Use "@" or "_"</span>
 
@@ -139,7 +156,7 @@ const Cadastro = () => {
                     className={`input-cadastro ${validconfirm === true ? 'open' : 'closed'}`}
                     placeholder='Your Password'
                     name='confirmpass'
-                    onChange={ confirmdata }
+                    onChange={confirmdata}
                     required />
 
                 <span className={`validacao ${validconfirm === true ? 'some' : ''}`}>*Passowrds must be the same</span>
@@ -151,7 +168,7 @@ const Cadastro = () => {
                     className={`input-cadastro ${validemail === true ? 'open' : 'closed'}`}
                     placeholder='Enter a valid E-mail'
                     name='email'
-                    onChange={ emaildata }
+                    onChange={emaildata}
                     required />
 
                 <span className={`validacao ${validemail === true ? 'some' : ''}`}>*Use a valid e-mail</span>
