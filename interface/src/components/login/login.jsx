@@ -4,7 +4,7 @@ import { AiFillGithub } from 'react-icons/ai'
 
 import './login.css';
 
-function Login({ api }) {
+function Login({validationuser, loginplat }) {
 
   const [userlogin, setuserlogin] = useState('')
   const [userpassword, setuserpassword] = useState('')
@@ -16,20 +16,9 @@ function Login({ api }) {
     setuserpassword(a.target.value)
   }
 
-  function loginplat() {
+  //PROPS
 
-    const result = api.find(element => element.username === userlogin && element.password === userpassword)
-   
-    if (result === undefined) {
-
-      console.log('user não existe')
-    } else {
-
-          console.log(result)
-    }
-  }
-
-
+  validationuser(userlogin,userpassword)
 
   return (
     <div className="login">
@@ -40,7 +29,7 @@ function Login({ api }) {
             <h1 className='tittle-form' >Login</h1>
           </div>
           <div>
-            <form className='form'>
+            <div className='form'>
               <p className='tittle-input'>Username</p>
               <input
 
@@ -64,7 +53,8 @@ function Login({ api }) {
               <br></br>
               <br></br>
               <button className='submit' onClick={loginplat} >Login</button>
-            </form>
+              
+            </div>
           </div>
         </div>
         <div className='content-login'>
