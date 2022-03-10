@@ -1,31 +1,12 @@
-//import { useParams } from 'react-router-dom'
-import React from 'react'
-import { useParams } from 'react-router-dom'
+import React from 'react';
 
-const RedirectComp = ({ api }) => {
-  const key = sessionStorage.getItem("key")
+const Plat = ({user}) => {
 
-  let { id } = useParams()
-  const searchuser = api.find(element => element.id === Number(id))
-
-  if (key === null) {
     return (
-      <> 
-        ERROR
-      </>
+        <>
+            <h1>Bem vindo {user.username}</h1>
+        </>
     );
-  } else {
-    return (
-      <> 
-        <h1>Bem vindo</h1>
-      </>
-    );
-
-  }
-
- 
-  
-
 }
 
-export default RedirectComp;
+export default Plat;

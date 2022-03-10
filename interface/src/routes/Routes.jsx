@@ -12,7 +12,7 @@ import {
 import Cadastro from '../components/cadastro/cadastro';
 import Finish from '../components/finish/finish';
 import Login from '../components/login/login';
-import RedirectComp from '../components/plataforma/plat';
+import RedirectComp from '../components/plataforma/redirect';
 
 //hooks
 
@@ -31,16 +31,12 @@ const Router = ({ database }) => {
     function onsubmit() {
         //chave que vai ser manipulada <3 
         if (user === undefined) {
-
-            alert('Senha ou user errado')
+            alert('password or username not found')
         } else {
             window.location = `plat/${user.id}`
-            sessionStorage.setItem("key", `${user.id}@${user.password}`);
-        }
-
-        
+            sessionStorage.setItem("key", JSON.stringify(user));
+        }   
     }
-
 
     return (
 
@@ -60,5 +56,4 @@ const Router = ({ database }) => {
 
     )
 }
-
 export default Router;
