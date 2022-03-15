@@ -1,3 +1,4 @@
+
 .login-component {
     display: flex;
     flex-direction: row;
@@ -26,9 +27,11 @@
     border-radius: 50%;
     background-color: #f1f0f2;
     transition: .3s;
+    color: black;
 }
 .logo:hover {
-    background-color: #088c37;
+    background-color: black;
+    color: white;
     transition: .3s;
 }
 .tittle-form {
@@ -105,6 +108,7 @@
     border-radius: 50%;
     background-color: white;
     transition: .3s;
+    color: black;
 }
 .github:hover {
     transition: .3s;

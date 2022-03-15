@@ -1,0 +1,191 @@
+/*Ornaização Geral */
+.menu-component {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border: 1px solid;
+    width: 18%;
+    height: 100vh;
+    padding: 10px;
+    background-color: white; 
+} 
+
+.topo-menu {
+    width: 100%;
+    flex: 3;
+    border-bottom: 1px solid ;
+}
+.meio-menu {
+    width: 100%;
+    flex: 5;
+    border-bottom: 1px solid ;
+}
+.fim-menu{
+    width: 100%;
+    flex: 2;
+}
+/*partes */
+.topo-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.user{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 2;
+    transition: .2s;
+}
+.usericon{
+    border: 1px solid;
+    padding: 5px;
+    border-radius: 50%;
+    font-size: 40px;
+    transition: .2s;
+    color: inherit;
+    background-color: white;
+}
+.close {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+.close-button {
+    cursor: pointer;
+    
+}
+.meio-menu {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.meio-menu-content {
+    width: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.p-meio-menu {
+    width: 100%;
+    padding: 2px;
+    display: flex;
+    align-items: center;
+    margin: 15px auto;
+    color: #afb4c7;
+    cursor: pointer;
+    border: 1px solid transparent;
+    font-size: 15px;
+    border-radius: 10px;
+    transition: all ease-in 0.2s;
+}
+.p-meio-menu:hover {
+    background-color: #ebf0fe;
+    border: 1px solid black;
+    color: black;
+}
+.icon-menu {    
+    margin: 0 5px 0 0;
+    padding: 3px;
+    text-align: center;
+    border-radius: 50%;
+    border: 2px solid ;
+    color: inherit;
+    transition: .2s;
+    color: inherit;
+}
+.text {
+    transition: .2s;
+    color: #afb4c7;
+    color: inherit;
+}
+
+.fim-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+}
+.button-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+}
+.button-darkmode{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    background-color: transparent  ;
+    border: 2px solid #afb4c7;
+    width: 65px;
+    padding: 4px 8px;
+    border-radius: 100px;
+    transition: all ease-in 0.2s;
+    background-color: #ebf0fe;
+}
+.button-darkmode:hover {
+    border: 2px solid inherit;
+    background-color: #ebf0fe;
+}
+.content-darkmode {
+    height: 100%;
+    background-color: black;
+    width: 36%;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+
+/*CLASSES DE ANIMAÇÃ0*/
+.some {
+    display: none;
+    transition: .2s;
+}
+.center {
+    margin: 0 auto;
+    border: 2px solid;
+    color: inherit;
+    font-size: 35px;
+    transition: .2s;
+    border-radius: 50%;
+    padding: 3px;
+}
+.dark {
+    justify-content: end;
+}
+.menucompclosed{
+    width: 8%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*DARKMODE CLASSES*/
+
+.menudarkmode {
+    background-color: #1a1c1e;
+    color: white;
+}
+.p-meio-menu-dark {
+    color: white;
+}
+.p-meio-menu-dark:hover {
+    background-color: #303234;
+    border: 1px solid transparent;
+    color: white;
+}
+
+
+    

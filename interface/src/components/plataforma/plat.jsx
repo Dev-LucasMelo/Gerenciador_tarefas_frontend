@@ -1,10 +1,13 @@
 import React from 'react';
 
-const Plat = ({user}) => {
+//components
+import MenuPlat from './components/Menu_plat/menu';
 
+
+const Plat = ({user}) => {
     return (
-        <>
-            <h1>Bem vindo {user.username}</h1>
+        <> 
+            <MenuPlat user={user} />
         </>
     );
 }

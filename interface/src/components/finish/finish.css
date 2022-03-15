@@ -5,11 +5,11 @@
     justify-content: center;
     background-color: white;
     border: 2px solid ;
-    width: 40%;
+    width: max-content;
     margin: 100px auto;
     border-radius: 50px;
     height: max-content;
-    padding: 10px 0px;
+    padding: 10px 10px;
 }
 .finish-icon {
     font-size: 70px;

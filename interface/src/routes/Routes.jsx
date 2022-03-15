@@ -12,9 +12,8 @@ import {
 import Cadastro from '../components/cadastro/cadastro';
 import Finish from '../components/finish/finish';
 import Login from '../components/login/login';
-import RedirectComp from '../components/plataforma/redirect';
+import RedirectComp from '../components/plataforma/components/redirect/redirect';
 
-//hooks
 
 const Router = ({ database }) => {
     const [user, setuser] = useState([])
@@ -48,7 +47,7 @@ const Router = ({ database }) => {
                     <Route path='/Finish' element={<Finish />} />
 
                     <Route path='/plat'>
-                        <Route path=':id' element={<RedirectComp api={database} />} />
+                        <Route path=':id' element={<RedirectComp />} />
                     </Route>
                 </Routes>
            
