@@ -1,8 +1,6 @@
 /*Ornaização Geral */
 .menu-component {
-    position: fixed;
-    left: 0px;
-    top: 0px;
+    z-index: 10;
     display: flex;
     flex-direction: column;
     justify-content: space-around;

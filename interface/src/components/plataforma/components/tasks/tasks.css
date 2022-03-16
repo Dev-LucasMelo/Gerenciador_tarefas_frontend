@@ -1,0 +1,28 @@
+.task-component {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 85%;
+    border: 1px solid rgba(0, 0, 0, 0.39);
+    border-left: 15px solid green;
+    margin: 25px auto;
+    background-color: white;
+    height: max-content;
+    padding: 10px;
+    border-radius: 20px;
+}
+.title-task {
+    font-size: 25px;
+    margin: 0 0 10px 0;
+
+}
+.content-task {
+    width: 97%;
+    padding: 5px 10px;
+    margin: 0 auto;
+    height: max-content;
+    border: 1px solid rgba(0, 0, 0, 0.486);
+    background-color: #afb4c76e;
+    border-radius: 20px;
+    
+}
