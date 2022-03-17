@@ -1,15 +1,30 @@
+import React, { useState } from 'react';
+
+
 import './tasks.css'
 
-const Tasks = () => {
+const Tasks = ({ data }) => {
+    
+    
+
     return (
-        <div className='task-component' >
-            <div className="title-task">
-                tittle
-            </div>
-            <div className="content-task">
-                content
-            </div>
-        </div>
+        <>
+            {data.map((api, key) => (
+                <>
+                    <div key={key} id={api.id} className={`task-component ${api.completed === true ? "completed" : 'uncompleted'}`} >
+                        <div className="title-task">
+                            {api.tittletask}
+                        </div>
+                        <div className="content-task">
+                            {api.contenttask}
+                        </div>
+                    </div>
+                </>
+            ))}
+
+
+
+        </>
     );
 }
 

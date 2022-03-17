@@ -34,7 +34,24 @@ const MenuPlat = ({ user }) => {
     function click() {
         seticon(++icon)
 
-        if (icon % 2 === 0 || icon === 0) {
+        if (icon === 1 ||  icon % 2 === 1) {
+            texts.forEach((i) => {
+                i.classList.remove('some')
+            })
+
+            iconsmenu.forEach((i) => {
+                i.classList.remove('center')
+            })
+            menucomp.classList.remove('menucompclosed')
+            tittlemenu.classList.remove('some')
+            nickname.classList.remove('some')
+            usericon.classList.remove('center')
+            buttondarkmode.classList.remove('some')
+            sol.classList.remove('some')
+            lua.classList.remove('some')
+            sol.classList.remove('center')
+            lua.classList.remove('center')
+        } else {
             texts.forEach((i) => {
                 i.classList.add('some')
             })
@@ -56,25 +73,8 @@ const MenuPlat = ({ user }) => {
                 sol.classList.remove('some')
                 sol.classList.add('center')
                 lua.classList.add('some')
-            }
-        } else {
-            texts.forEach((i) => {
-                i.classList.remove('some')
-            })
-
-            iconsmenu.forEach((i) => {
-                i.classList.remove('center')
-            })
-            menucomp.classList.remove('menucompclosed')
-            tittlemenu.classList.remove('some')
-            nickname.classList.remove('some')
-            usericon.classList.remove('center')
-            buttondarkmode.classList.remove('some')
-            sol.classList.remove('some')
-            lua.classList.remove('some')
-            sol.classList.remove('center')
-            lua.classList.remove('center')
-        }
+            }  
+        } 
     }
 
     
@@ -112,9 +112,9 @@ const MenuPlat = ({ user }) => {
 
 
     return (
-        <header className='menu-component' >
+        <header className='menu-component ' >
 
-            <div className='topo-menu' >
+            <div className='topo-menu ' >
                 <div className='close'>
                     <h1 onClick={click} className='close-button' >{icon % 2 === 0 ? <BiMenu /> : <CgClose />}</h1>
                 </div>

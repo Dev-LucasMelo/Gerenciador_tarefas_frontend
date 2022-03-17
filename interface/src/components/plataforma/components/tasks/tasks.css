@@ -3,8 +3,7 @@
     flex-direction: column;
     align-items: flex-start;
     width: 85%;
-    border: 1px solid rgba(0, 0, 0, 0.39);
-    border-left: 15px solid green;
+    border: 1px solid rgba(0, 0, 0, 0.39);   
     margin: 25px auto;
     background-color: white;
     height: max-content;
@@ -25,4 +24,13 @@
     background-color: #afb4c76e;
     border-radius: 20px;
     
+}
+
+/*animations class*/
+
+.completed {
+    border-left: 15px solid green;
+}
+.uncompleted {
+    border-left: 15px solid red;
 }
