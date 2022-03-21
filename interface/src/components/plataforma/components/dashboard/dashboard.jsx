@@ -2,18 +2,16 @@ import React,{useState,useEffect} from 'react';
 import Api from '../../../../data/api';
 import Headerplat from '../header/headerplat';
 import Tasks from '../tasks/tasks';
-import {useParams} from 'react-router-dom'
+
 import './dashboard.css'
 
 
 
-const Dashboard = () => {
+const Dashboard = ({user}) => {
     const [apitasks,setapitasks] = useState([])
-
-    const {id } = useParams()
-    
+        
     useEffect(()=> {
-        Api.get(`/tasks${id}`).then((json) => {
+        Api.get(`/tasks${user.username.replace(/\s/g, '').toLowerCase()}`).then((json) => {
             setapitasks(json.data)
         })
     },[])
@@ -22,7 +20,6 @@ const Dashboard = () => {
     return (
         <section className='dashboard-component'>
             <Headerplat />
-
             <Tasks data={apitasks} />
 
 

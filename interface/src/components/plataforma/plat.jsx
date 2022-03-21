@@ -10,7 +10,7 @@ const Plat = ({user}) => {
     return (
         <div className='plataforma-geral'> 
             <MenuPlat user={user} />
-            <Dashboard />
+            <Dashboard user={user} />
         </div>
     );
 }
