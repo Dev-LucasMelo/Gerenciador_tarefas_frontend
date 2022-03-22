@@ -1,0 +1,53 @@
+.edittask-component {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 15% 31%;
+    border: 1px solid;
+    background-color: white;  
+    width: 30%;
+    height: max-content;
+    border: 1px solid rgba(0, 0, 0, 0.411);
+    border-radius: 30px;
+    padding: 0 10px;
+   
+}
+.edittask-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.close-form {
+    font-size: 25px;
+    cursor: pointer;
+}
+.edittask-form {
+    display: flex;
+    flex-direction: column;
+    
+}
+.addtask-fieldset {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+legend {
+    text-align: center;
+}
+.tittle {
+    margin: 5px 0;
+    font-size: 19px;
+}
+.content {
+    height: 50px;
+    min-width: 99%;
+    max-width: 99%;
+    max-height: 30vh;
+    min-height: 30vh;
+    margin: 3px auto;
+    font-size: 16px;
+}
+.some {
+    display: none;
+}

@@ -27,7 +27,9 @@
     border: 1px solid rgba(0, 0, 0, 0.486);
     background-color: #afb4c76e;
     border-radius: 20px;
-    
+}
+.icon-edit {
+    cursor: pointer;
 }
 
 /*animations class*/

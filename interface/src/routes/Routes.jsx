@@ -17,7 +17,7 @@ import RedirectComp from '../components/plataforma/components/redirect/redirect'
 
 const Router = ({ database }) => {
     const [user, setuser] = useState([])
-    
+
     //pegar dados de login 
 
     function setdadoslogin(user, password) {
@@ -34,23 +34,25 @@ const Router = ({ database }) => {
         } else {
             window.location = `plat/${user.id}`
             sessionStorage.setItem("key", JSON.stringify(user));
-        }   
+        }
     }
 
     return (
 
         <BrowserRouter>
-       
-                <Routes>
-                    <Route path='/' element={<Login user={setdadoslogin} submit={onsubmit} />} />
-                    <Route path='/cadastro' element={<Cadastro api={database} />} />
-                    <Route path='/Finish' element={<Finish />} />
 
-                    <Route path='/plat'>
-                        <Route path=':id' element={<RedirectComp />} />
+            <Routes>
+                <Route path='/' element={<Login user={setdadoslogin} submit={onsubmit} />} />
+                <Route path='/cadastro' element={<Cadastro api={database} />} />
+                <Route path='/Finish' element={<Finish />} />
+
+                <Route path='/plat'>
+                    <Route path=':id/' element={<RedirectComp />} >
+                        
                     </Route>
-                </Routes>
-           
+                </Route>
+            </Routes>
+
         </BrowserRouter>
 
     )
