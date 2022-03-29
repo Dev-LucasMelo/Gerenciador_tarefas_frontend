@@ -1,22 +1,24 @@
 import React from 'react';
 import './edittask.css'
-import {useParams} from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 
 
 const Edittask = () => {
     const { rota } = useParams()
 
-    const idtaks = sessionStorage.getItem("task")
+    const task = JSON.parse(sessionStorage.getItem("task"))
+    const key = JSON.parse(sessionStorage.getItem("key"))
 
-    console.log(idtaks)
     return (
         <div className='edittask-component '>
             <div>
-                <h1>Edit Task</h1> 
+                <h1>Edit Task</h1>
             </div>
             <form action={`http://localhost:4000/edit${rota}`} className='form-edit' method='post'>
+                <input className='some' type="number" name="idtask" id="" value={task.id} readOnly />
+                <input className='some' type="number" name="iduser" id="" value={key.id} readOnly />
+
                 <input name='edittittle' className='input-edit' type="text" placeholder='Title of Task' />
-                <input className='some' type="number" name="idtask" id="" value={idtaks} readOnly />
                 <textarea name='editcontent' className='textarea-edit' placeholder='Content of Task' />
                 <fieldset className='fieldset-edit'>
                     <legend>Task Completed</legend>
@@ -31,7 +33,7 @@ const Edittask = () => {
                 </fieldset>
                 <div className='buttonsbox-editform'>
                     <input className='submit' type="submit" value="Update" />
-                    <a className='cancel' href="">Cancel</a>
+                    <a className='cancel' href={`/plat/${key.id}`}>Cancel</a>
                 </div>
 
             </form>
