@@ -20,7 +20,7 @@ const Dashboard = ({user}) => {
     return (
         <section className='dashboard-component'>
             <Headerplat />
-            <Tasks data={apitasks} />
+            <Tasks data={apitasks} rota={user.username.replace(/\s/g, '').toLowerCase()} />
 
 
 

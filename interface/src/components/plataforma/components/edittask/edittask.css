@@ -1,53 +1,74 @@
 .edittask-component {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    margin: 15% 31%;
-    border: 1px solid;
-    background-color: white;  
-    width: 30%;
-    height: max-content;
-    border: 1px solid rgba(0, 0, 0, 0.411);
-    border-radius: 30px;
-    padding: 0 10px;
-   
-}
-.edittask-top {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
+    border: 2px solid rgba(0, 0, 0, 0.507);
+    background-color: white;
+    width: 25%;
+    min-width: 300px;
+    margin: 4% auto;
+    height: 80vh;
+    border-radius: 15px;
+    padding: 2px;
+    box-shadow: 5px 9px 10px rgba(0, 0, 0, 0.493);
 }
-.close-form {
-    font-size: 25px;
-    cursor: pointer;
-}
-.edittask-form {
+.form-edit {
     display: flex;
     flex-direction: column;
-    
+    align-items: center;
+    justify-content: flex-start;
+    height: 80%;
 }
-.addtask-fieldset {
+.input-edit {
+    
+    width:max-content;
+    font-size: 20px;
+    padding: 4px;
+    margin: 0 0 17px 0;
+}
+.textarea-edit {
+    max-width: max-content;
+    min-width: 98%;
+    min-height: 40%;
+    max-height: 40%;
+    font-size: 19px;
+    padding: 4px;
+    margin: 0 0 17px 0;
+
+}
+.fieldset-edit {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    border: none;
+    border-top: 2px solid rgba(0, 0, 0, 0.452);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.452);
+    margin: 10px 0 20px 0 ;
+}
+.buttonsbox-editform {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
+    width: 100%;
 }
-legend {
-    text-align: center;
+.cancel {
+    border: 1px solid;
+    background-color:red ;
+    font-size: 22px;
+    width: max-content;
+    color: white;
+    border: 1px solid red;
+    padding: 1px 24px;
+    border-radius: 500px;
+    transition: .4s;
 }
-.tittle {
-    margin: 5px 0;
-    font-size: 19px;
-}
-.content {
-    height: 50px;
-    min-width: 99%;
-    max-width: 99%;
-    max-height: 30vh;
-    min-height: 30vh;
-    margin: 3px auto;
-    font-size: 16px;
-}
-.some {
-    display: none;
+.cancel:hover {
+    background-color: white;
+    border: 1px solid red;
+    color:red;
+    transition: .4s;
 }
