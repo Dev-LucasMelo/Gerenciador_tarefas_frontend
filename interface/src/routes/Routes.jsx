@@ -12,6 +12,7 @@ import {
 import Cadastro from '../components/cadastro/cadastro';
 import Finish from '../components/finish/finish';
 import Login from '../components/login/login';
+import CreateTask from '../components/plataforma/components/createtask/createtask';
 import Edittask from '../components/plataforma/components/edittask/edittask';
 import RedirectComp from '../components/plataforma/components/redirect/redirect';
 
@@ -52,6 +53,10 @@ const Router = ({ database }) => {
                     
                     <Route path='edit'> 
                         <Route path=':rota' element={<Edittask />} />
+                    </Route>
+
+                    <Route path='create'> 
+                        <Route path=':user' element={<CreateTask />} />
                     </Route>
                 </Route>
             </Routes>

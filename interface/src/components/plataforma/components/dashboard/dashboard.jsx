@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react';
 import Api from '../../../../data/api';
-import Headerplat from '../header/headerplat';
+
 import Tasks from '../tasks/tasks';
 
 import './dashboard.css'
@@ -19,11 +19,7 @@ const Dashboard = ({user}) => {
 
     return (
         <section className='dashboard-component'>
-            <Headerplat />
             <Tasks data={apitasks} rota={user.username.replace(/\s/g, '').toLowerCase()} />
-
-
-
         </section>
     );
 }

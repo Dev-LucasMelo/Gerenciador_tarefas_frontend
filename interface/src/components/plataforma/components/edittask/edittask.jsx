@@ -18,16 +18,16 @@ const Edittask = () => {
                 <input className='some' type="number" name="idtask" id="" value={task.id} readOnly />
                 <input className='some' type="number" name="iduser" id="" value={key.id} readOnly />
 
-                <input name='edittittle' className='input-edit' type="text" placeholder='Title of Task' />
-                <textarea name='editcontent' className='textarea-edit' placeholder='Content of Task' />
+                <input required name='edittittle' className='input-edit' type="text" placeholder='Title of Task' />
+                <textarea required name='editcontent' className='textarea-edit' placeholder='Content of Task' />
                 <fieldset className='fieldset-edit'>
                     <legend>Task Completed</legend>
                     <div>
-                        <input type="radio" name="editcompletedtask" id="completedtrue" value={true} />
+                        <input required type="radio" name="editcompletedtask" id="completedtrue" value={true} />
                         <label htmlFor="completedtrue"><span>True</span></label>
                     </div>
                     <div>
-                        <input type="radio" name="editcompletedtask" id="completedfalse" value={false} />
+                        <input required type="radio" name="editcompletedtask" id="completedfalse" value={false} />
                         <label htmlFor="completedfalse"><span>False</span></label>
                     </div>
                 </fieldset>

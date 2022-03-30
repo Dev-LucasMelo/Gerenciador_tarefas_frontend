@@ -169,6 +169,10 @@
     align-items: center;
     justify-content: center;
 }
+.link-createtask {
+    text-align: start;
+    width: 100%;
+}
 
 /*DARKMODE CLASSES*/
 
