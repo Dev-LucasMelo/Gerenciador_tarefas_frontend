@@ -6,8 +6,6 @@ const CreateTask = () => {
     const { user } = useParams()
     const key = JSON.parse(sessionStorage.getItem("key"))
 
-    console.log(key)
-
     return (
         <div className='edittask-component '>
             <div>
@@ -15,7 +13,6 @@ const CreateTask = () => {
             </div>
             <form action={`http://localhost:4000/createtask${user}`} className='form-edit' method='post'>
                 <input className='some' type="text" name="rotaderetorno" id="" value={key.id} readOnly />
-                <input className='some' type="text" name="usernamecreate" id="" value={user} readOnly />
 
                 <input required name='createtittle' className='input-edit' type="text" placeholder='Title of Task' />
                 <textarea required name='createcontent' className='textarea-edit' placeholder='Content of Task' />

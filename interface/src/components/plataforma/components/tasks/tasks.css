@@ -17,7 +17,14 @@
     justify-content: space-between;
     font-size: 25px;
     margin: 0 0 10px 0;
-
+}
+.box-icons {
+    width: 10%;
+    height: max-content;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    padding: 0 3px;
 }
 .content-task {
     width: 97%;
@@ -28,8 +35,18 @@
     background-color: #afb4c76e;
     border-radius: 20px;
 }
-.icon-edit {
+.icon {
     cursor: pointer;
+    margin: 0 5px;
+    font-size: 22px;
+
+    
+}
+.link-icon{
+    font-size: initial;
+    margin: 0 0px;
+    padding: -1;
+    
 }
 
 /*animations class*/

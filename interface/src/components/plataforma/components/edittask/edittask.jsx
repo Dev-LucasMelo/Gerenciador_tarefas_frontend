@@ -16,7 +16,6 @@ const Edittask = () => {
             </div>
             <form action={`http://localhost:4000/edit${rota}`} className='form-edit' method='post'>
                 <input className='some' type="number" name="idtask" id="" value={task.id} readOnly />
-                <input className='some' type="number" name="iduser" id="" value={key.id} readOnly />
 
                 <input required name='edittittle' className='input-edit' type="text" placeholder='Title of Task' />
                 <textarea required name='editcontent' className='textarea-edit' placeholder='Content of Task' />
