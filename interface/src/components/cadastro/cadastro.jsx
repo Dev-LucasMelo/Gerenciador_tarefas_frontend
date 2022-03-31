@@ -40,81 +40,39 @@ const Cadastro = ({ api }) => {
 
     var userunregistered = ''
 
-    if (searchUserRegistered === undefined) {
-        userunregistered = true
-    } else {
-
-        userunregistered = false
-    }
-
-
+    searchUserRegistered === undefined ? userunregistered = true : userunregistered = false
 
     //USER 
     var validuser = ''
 
-    if (username.length >= 8 && userunregistered === true) {
-        validuser = true
-
-    } else {
-        validuser = false
-    }
-
+    username.length >= 8 && userunregistered === true ? validuser = true : validuser = false
 
     //PASSWORD
 
     var validpassword = ''
-    if (password.length >= 8 && password.indexOf("@") > -1 ||
-        password.length >= 8 && password.indexOf("_") > -1) {
+ 
+    password.length >= 8 && password.indexOf("@") > -1 ||  
+    password.length >= 8 && password.indexOf("_") > -1 ? validpassword = true : validpassword = false
 
-        validpassword = true
+    //CONFIRMPASSOWRD
 
-        //CONFIRMPASSOWRD
-
-        if (validpassword === true) {
-            var validconfirm = ''
-
-            if (confirm === password) {
-                validconfirm = true
-            } else {
-                validconfirm = false
-            }
-        }
-
-    } else {
-        validpassword = false
-    }
+    var validconfirm = ''
+    
+    validpassword === true ? confirm === password ? validconfirm = true :validconfirm = false : validconfirm = ''
 
     //valid email
-    var validemail
 
-    if (email.indexOf('@gmail') > -1 ||
-        email.indexOf('@hotmail') > -1 ||
-        email.indexOf('@outlook') > -1 ||
-        email.indexOf('@yahoo') > -1) {
+    var validemail = ''
 
-        validemail = true
-    } else {
-        validemail = false
-    }
+    email.indexOf('@gmail') > -1 || email.indexOf('@hotmail') > -1 ||
+    email.indexOf('@outlook') > -1 || email.indexOf('@yahoo') > -1 ? validemail = true : validemail = false
 
     //valid submit 
 
-    var validsubmit = true
+    var validsubmit = ''
 
-    if (validuser === true &&
-        validpassword === true &&
-        validconfirm === true &&
-        validemail === true) {
-
-        validsubmit = true
-
-    } else {
-        validsubmit = false
-    }
-
-
-
-
+     validuser === true && validpassword === true &&
+     validconfirm === true && validemail === true ? validsubmit = true : validsubmit = false
 
     return (
         <div className='cadastro-component'>

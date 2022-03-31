@@ -5,14 +5,16 @@ import Plat from '../../plat'
 
 
 const RedirectComp = () => {
+
   const key = sessionStorage.getItem("key")
   const apikey = JSON.parse(key)
 
   let { id } = useParams()
 
-if(key === null || apikey.id !== Number(id) ) {
-    return (
+  //
 
+  function redirecttologin() {
+    return (
       <div className='finish-component' >
         <h1>Error accessing the platform, you need to log in</h1>
         <div>
@@ -20,7 +22,10 @@ if(key === null || apikey.id !== Number(id) ) {
         </div>
       </div>
     )
-  }else if (apikey.id === Number(id)) {
+  }
+
+
+  function redirecttoplataform() {
     return (
       <>
         <Plat user={apikey} />
@@ -28,6 +33,7 @@ if(key === null || apikey.id !== Number(id) ) {
     )
   }
 
+  return key === null || apikey.id !== Number(id) ? redirecttologin() : redirecttoplataform()
 }
 
 export default RedirectComp;

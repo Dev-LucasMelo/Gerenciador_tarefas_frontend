@@ -35,20 +35,22 @@
     background-color: #afb4c76e;
     border-radius: 20px;
 }
-.icon {
-    cursor: pointer;
+.icon { 
     margin: 0 5px;
-    font-size: 22px;
-
-    
+    font-size: 22px;    
+    pointer-events: none;
 }
 .link-icon{
     font-size: initial;
     margin: 0 0px;
     padding: -1;
-    
+    width: max-content;
 }
-
+button {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+}
 /*animations class*/
 
 .completed {

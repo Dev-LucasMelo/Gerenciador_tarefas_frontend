@@ -10,7 +10,7 @@ const Tasks = ({ data, rota }) => {
     //edittask
 
     const edittask = (e) => {
-        let id = e.target.id
+        let id = e.target.value
 
         let result = data.filter(task => task.id === Number(id))[0]
 
@@ -21,22 +21,23 @@ const Tasks = ({ data, rota }) => {
 
     //delete task 
     const [idtask, setidtask] = useState('')
-    
-    const Deletetask = (e) => {  
-        let id = e.target.id 
-        
+
+    const Deletetask = (e) => {
+        let id = e.target.value
+
+        console.log(id)
+
         let result = data.filter(task => task.id === Number(id))[0]
 
         if (id === '') {
             alert('clique novamente')
-        }  else {
-            setidtask(id)   
-            sessionStorage.setItem("deletetask",JSON.stringify(result))
-        } 
-         
-    }   
-  
-    
+        } else {
+            setidtask(id)
+            sessionStorage.setItem("deletetask", JSON.stringify(result))
+        }
+
+    }
+
     return (
         data.map((api, key) => (
 
@@ -44,9 +45,8 @@ const Tasks = ({ data, rota }) => {
                 <div className="title-task">
                     {api.tittletask}
                     <div className='box-icons'>
-
-                        <a className='link-icon' href={validation === undefined ? '' : `/plat/edit/${rota}`} ><FaRegEdit id={api.id} className='icon' onClick={edittask} /></a>
-                        <a href={idtask === '' ? ' ' : `/plat/delete/${idtask}`}><FaTrashAlt  id={api.id} className='icon' onClick={Deletetask}/></a> 
+                        <a className='link-icon' href={validation === undefined ? '' : `/plat/edit/${rota}`} ><button value={api.id} onClick={edittask} ><FaRegEdit className='icon'/></button> </a>
+                        <a href={idtask === '' ? ' ' : `/plat/delete/${idtask}`}  >  <button value={api.id} onClick={Deletetask}> <FaTrashAlt className='icon' /></button> </a>
                     </div>
                 </div>
                 <div className="content-task">
