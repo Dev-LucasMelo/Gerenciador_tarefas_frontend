@@ -109,7 +109,7 @@ const MenuPlat = ({ user }) => {
                     <p className='p-meio-menu'><FaClipboardList className='icon-menu' /> <span className='text'>All tasks</span> </p>
                     <p className='p-meio-menu'><BiTaskX className='icon-menu' /> <span className='text'>Tasks not completed</span> </p>
                     <p className='p-meio-menu'><BiTask className='icon-menu' /><span className='text'>Tasks completed</span> </p>
-                    <a className='link-createtask' href={`/plat/create/${user.username.replace(/\s/g, '').toLowerCase()}`}><p className='p-meio-menu'><MdAddTask className='icon-menu' /><span className='text'>Add Task</span> </p></a> 
+                    <a onClick={' '} className='link-createtask' href={`/plat/create/${user.username.replace(/\s/g, '').toLowerCase()}`}><p className='p-meio-menu'><MdAddTask className='icon-menu' /><span className='text'>Add Task</span> </p></a> 
                     <p className='p-meio-menu'><BiExit className='icon-menu' /><span className='text'>Exit</span> </p>
                 </div>
             </div>

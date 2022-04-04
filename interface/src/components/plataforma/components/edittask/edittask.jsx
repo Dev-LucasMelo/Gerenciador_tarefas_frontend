@@ -4,8 +4,9 @@ import { useParams } from 'react-router-dom'
 
 
 const Edittask = () => {
-    const { rota } = useParams()
+    const { rota } = useParams() 
 
+    
     const task = JSON.parse(sessionStorage.getItem("task"))
     const key = JSON.parse(sessionStorage.getItem("key"))
 
@@ -14,9 +15,9 @@ const Edittask = () => {
             <div>
                 <h1>Edit Task</h1>
             </div>
-            <form action={`http://localhost:4000/edit${rota}`} className='form-edit' method='post'>
+            <form action={`http://localhost:4000/edittask/${rota}`} className='form-edit' method='post'>
                 <input className='some' type="number" name="idtask" id="" value={task.id} readOnly />
-
+                <input className='some' type="text" name="rotaretorno" id="" value={key.id} readOnly />
                 <input required name='edittittle' className='input-edit' type="text" placeholder='Title of Task' />
                 <textarea required name='editcontent' className='textarea-edit' placeholder='Content of Task' />
                 <fieldset className='fieldset-edit'>

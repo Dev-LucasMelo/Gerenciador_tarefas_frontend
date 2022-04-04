@@ -25,8 +25,6 @@ const Tasks = ({ data, rota }) => {
     const Deletetask = (e) => {
         let id = e.target.value
 
-        console.log(id)
-
         let result = data.filter(task => task.id === Number(id))[0]
 
         if (id === '') {

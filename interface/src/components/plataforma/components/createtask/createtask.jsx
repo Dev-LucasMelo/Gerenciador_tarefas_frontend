@@ -5,17 +5,16 @@ import { useParams } from 'react-router-dom'
 const CreateTask = () => {
     const { user } = useParams()
     const key = JSON.parse(sessionStorage.getItem("key"))
-    
-    //tornar conexao assinctrona 
+
 
     return (
         <div className='edittask-component '>
             <div>
                 <h1>Create Task </h1>
             </div>
-            <form action={`http://localhost:4000/createtask${user}`} className='form-edit' method='post'>
+            <form action={`http://localhost:4000/createtask`} className='form-edit' method='post'>
                 <input className='some' type="text" name="rotaderetorno" id="" value={key.id} readOnly />
-
+                <input className='some' type="text" name="username" id="" value={user} readOnly />
                 <input required name='createtittle' className='input-edit' type="text" placeholder='Title of Task' />
                 <textarea required name='createcontent' className='textarea-edit' placeholder='Content of Task' />
                 <fieldset className='fieldset-edit'>

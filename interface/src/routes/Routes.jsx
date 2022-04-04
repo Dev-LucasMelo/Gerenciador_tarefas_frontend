@@ -21,7 +21,8 @@ import RedirectComp from '../components/plataforma/components/redirect/redirect'
 const Router = ({ database }) => {
     const [user, setuser] = useState([])
 
-    //pegar dados de login 
+    //pegar dados de login  
+
 
     function setdadoslogin(user, password) {
 

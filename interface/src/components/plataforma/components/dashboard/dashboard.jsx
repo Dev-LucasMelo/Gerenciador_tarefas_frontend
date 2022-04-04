@@ -5,13 +5,11 @@ import Tasks from '../tasks/tasks';
 
 import './dashboard.css'
 
-
-
 const Dashboard = ({user}) => {
     const [apitasks,setapitasks] = useState([])
         
     useEffect(()=> {
-        Api.get(`/tasks${user.username.replace(/\s/g, '').toLowerCase()}`).then((json) => {
+        Api.get(`/tasksuser/${user.username.replace(/\s/g, '').toLowerCase()}`).then((json) => {
             setapitasks(json.data)
         })
     },[])

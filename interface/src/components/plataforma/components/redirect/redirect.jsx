@@ -11,7 +11,6 @@ const RedirectComp = () => {
 
   let { id } = useParams()
 
-  //
 
   function redirecttologin() {
     return (

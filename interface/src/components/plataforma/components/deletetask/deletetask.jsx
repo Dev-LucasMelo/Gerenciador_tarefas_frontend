@@ -7,8 +7,9 @@ const Deletetask = () => {
     const rota = key.username.replace(/\s/g, '').toLowerCase()
 
     return (
-        <form action={`http://localhost:4000/delete${rota}`} className='deletetask-component' method='post'> 
+        <form action={`http://localhost:4000/delete/${rota}`} className='deletetask-component' method='post'> 
             <input name='deletetaskid' className='some' type="text" readOnly value={task.id} />
+            <input name='iduser' className='some' type="text" readOnly value={key.id} />
            <div className='answer'>
                <h2>Tem certeza que deseja <span className='redcolor' >DELETAR</span> a task <br /> "{task.tittletask}" ?</h2>
            </div>
