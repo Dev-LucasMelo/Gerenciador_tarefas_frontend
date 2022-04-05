@@ -4,7 +4,7 @@ import './tasks.css'
 import { FaRegEdit, FaTrashAlt } from 'react-icons/fa'
 
 
-const Tasks = ({ data, rota }) => {
+const Tasks = ({ data, rota, opt }) => {
     const [validation, setvalidation] = useState('')
 
     //edittask
@@ -36,14 +36,45 @@ const Tasks = ({ data, rota }) => {
 
     }
 
+    //filtro de tasks 
+
+
+    const taskscompleted = document.querySelectorAll('.completed')
+    const tasksnotcompleted = document.querySelectorAll('.uncompleted')
+
+    if (opt === "all") {
+        taskscompleted.forEach((a) => {
+            a.classList.remove('some')
+        })
+        tasksnotcompleted.forEach((a) => {
+            a.classList.remove('some')
+        })
+    }else if (opt === 'completed') {
+        taskscompleted.forEach((a) => {
+            a.classList.remove('some')
+        })
+        tasksnotcompleted.forEach((a) => {
+            a.classList.add('some')
+        })
+
+    } else if (opt === 'notcompleted') {
+        taskscompleted.forEach((a) => {
+            a.classList.add('some')
+        })
+        tasksnotcompleted.forEach((a) => {
+            a.classList.remove('some')
+        })
+    }
+
+
     return (
         data.map((api, key) => (
 
-            <div key={key} id={api.id} className={`task-component ${api.completed === true ? "completed" : 'uncompleted'}`} >
+            <div key={key} id={api.id} className={`task-component ${api.completed === true ? "completed" : 'uncompleted'} `} >
                 <div className="title-task">
                     {api.tittletask}
-                    <div className='box-icons'>
-                        <a className='link-icon' href={validation === undefined ? '' : `/plat/edit/${rota}`} ><button value={api.id} onClick={edittask} ><FaRegEdit className='icon'/></button> </a>
+                    <div className='box-icons ' >
+                        <a className='link-icon' href={validation === undefined ? '' : `/plat/edit/${rota}`} ><button value={api.id} onClick={edittask} ><FaRegEdit className='icon' /></button> </a>
                         <a href={idtask === '' ? ' ' : `/plat/delete/${idtask}`}  >  <button value={api.id} onClick={Deletetask}> <FaTrashAlt className='icon' /></button> </a>
                     </div>
                 </div>

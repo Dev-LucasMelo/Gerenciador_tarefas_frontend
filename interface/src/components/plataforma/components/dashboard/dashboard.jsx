@@ -5,7 +5,7 @@ import Tasks from '../tasks/tasks';
 
 import './dashboard.css'
 
-const Dashboard = ({user}) => {
+const Dashboard = ({user, opt}) => {
     const [apitasks,setapitasks] = useState([])
         
     useEffect(()=> {
@@ -14,10 +14,9 @@ const Dashboard = ({user}) => {
         })
     },[])
 
-
     return (
         <section className='dashboard-component'>
-            <Tasks data={apitasks} rota={user.username.replace(/\s/g, '').toLowerCase()} />
+            <Tasks opt={opt} data={apitasks} rota={user.username.replace(/\s/g, '').toLowerCase()} />
         </section>
     );
 }

@@ -9,7 +9,7 @@ import { GrUser, GrUserFemale } from 'react-icons/gr'
 import { MdAddTask } from 'react-icons/md'
 
 
-const MenuPlat = ({ user }) => {
+const MenuPlat = ({ user,taskcompleted,alltasks,notcompleted }) => {
     //states
     var [icon, seticon] = useState(1)
     var [darkbuttonclick, setdarkbuttonclick] = useState(1)
@@ -84,6 +84,12 @@ const MenuPlat = ({ user }) => {
         }) : items.forEach((i) => {
             i.classList.remove('p-meio-menu-dark')
         })
+    } 
+
+    //exit 
+
+    function Exit() {
+        sessionStorage.removeItem("key")
     }
 
     return (
@@ -106,11 +112,11 @@ const MenuPlat = ({ user }) => {
                     <h2 className='tittle' >Dashboard</h2>
                 </div>
                 <div className='meio-menu-content'>
-                    <p className='p-meio-menu'><FaClipboardList className='icon-menu' /> <span className='text'>All tasks</span> </p>
-                    <p className='p-meio-menu'><BiTaskX className='icon-menu' /> <span className='text'>Tasks not completed</span> </p>
-                    <p className='p-meio-menu'><BiTask className='icon-menu' /><span className='text'>Tasks completed</span> </p>
-                    <a onClick={' '} className='link-createtask' href={`/plat/create/${user.username.replace(/\s/g, '').toLowerCase()}`}><p className='p-meio-menu'><MdAddTask className='icon-menu' /><span className='text'>Add Task</span> </p></a> 
-                    <p className='p-meio-menu'><BiExit className='icon-menu' /><span className='text'>Exit</span> </p>
+                    <p onClick={alltasks} className='p-meio-menu'><FaClipboardList className='icon-menu' /> <span className='text'>All tasks</span> </p>
+                    <p onClick={notcompleted} className='p-meio-menu'><BiTaskX className='icon-menu' /> <span className='text'>Tasks not completed</span> </p>
+                    <p onClick={taskcompleted} className='p-meio-menu'><BiTask className='icon-menu' /><span className='text'>Tasks completed</span> </p>
+                    <a className='link-createtask' href={`/plat/create/${user.username.replace(/\s/g, '').toLowerCase()}`}><p className='p-meio-menu'><MdAddTask className='icon-menu' /><span className='text'>Add Task</span> </p></a> 
+                    <a className='link-createtask' href="/"><p onClick={Exit} className='p-meio-menu'><BiExit className='icon-menu' /><span className='text'>Exit</span> </p></a> 
                 </div>
             </div>
             <div className='fim-menu' >

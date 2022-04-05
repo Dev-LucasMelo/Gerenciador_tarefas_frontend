@@ -32,7 +32,7 @@ const RedirectComp = () => {
     )
   }
 
-  return key === null || apikey.id !== Number(id) ? redirecttologin() : redirecttoplataform()
+  return key === " " || key === null || apikey.id !== Number(id) ? redirecttologin() : redirecttoplataform()
 }
 
 export default RedirectComp;

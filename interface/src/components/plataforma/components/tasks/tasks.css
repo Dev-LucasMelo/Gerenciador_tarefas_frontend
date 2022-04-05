@@ -52,7 +52,9 @@ button {
     border: none;
 }
 /*animations class*/
-
+.some {
+    display: none;
+}
 .completed {
     border-left: 15px solid green;
 }
