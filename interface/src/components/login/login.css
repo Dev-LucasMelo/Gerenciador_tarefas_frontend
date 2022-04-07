@@ -125,7 +125,7 @@
 @media (max-width: 730px) {
     .login-component {
         flex-direction: column-reverse;
-        height: 90vh;
+        height: 70vh;
         width: 50%;
         min-width: 300px;
     }
