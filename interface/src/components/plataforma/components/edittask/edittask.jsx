@@ -1,44 +1,96 @@
-import React from 'react';
-import './edittask.css'
-import { useParams } from 'react-router-dom'
-
+import React from "react";
+import "./edittask.css";
+import { useParams } from "react-router-dom";
 
 const Edittask = () => {
-    const { rota } = useParams() 
+  const { rota } = useParams();
 
-    
-    const task = JSON.parse(sessionStorage.getItem("task"))
-    const key = JSON.parse(sessionStorage.getItem("key"))
+  const task = JSON.parse(sessionStorage.getItem("task"));
+  const key = JSON.parse(sessionStorage.getItem("key"));
 
-    return (
-        <div className='edittask-component '>
-            <div>
-                <h1>Edit Task</h1>
-            </div>
-            <form action={`http://localhost:4000/edittask/${rota}`} className='form-edit' method='post'>
-                <input className='some' type="number" name="idtask" id="" value={task.id} readOnly />
-                <input className='some' type="text" name="rotaretorno" id="" value={key.id} readOnly />
-                <input required name='edittittle' className='input-edit' type="text" placeholder='Title of Task' />
-                <textarea required name='editcontent' className='textarea-edit' placeholder='Content of Task' />
-                <fieldset className='fieldset-edit'>
-                    <legend>Task Completed</legend>
-                    <div>
-                        <input required type="radio" name="editcompletedtask" id="completedtrue" value={true} />
-                        <label htmlFor="completedtrue"><span>True</span></label>
-                    </div>
-                    <div>
-                        <input required type="radio" name="editcompletedtask" id="completedfalse" value={false} />
-                        <label htmlFor="completedfalse"><span>False</span></label>
-                    </div>
-                </fieldset>
-                <div className='buttonsbox-editform'>
-                    <input className='submit' type="submit" value="Update" />
-                    <a className='cancel' href={`/plat/${key.id}`}>Cancel</a>
-                </div>
+  var darkmodevalid = localStorage.getItem("Darkmode");
 
-            </form>
+  var body = document.querySelector("body");
+
+  darkmodevalid !== "true"
+    ? body.classList.add("backgrounddark")
+    : body.classList.remove("backgrounddark");
+
+  return (
+    <div className={ darkmodevalid !== "true" ? "edittask-component formdark" : "edittask-component" }>
+      <div>
+        <h1>Edit Task</h1>
+      </div>
+      <form
+        action={`http://localhost:4000/edittask/${rota}`}
+        className="form-edit"
+        method="post"
+      >
+        <input
+          className="some"
+          type="number"
+          name="idtask"
+          id=""
+          value={task.id}
+          readOnly
+        />
+        <input
+          className="some"
+          type="text"
+          name="rotaretorno"
+          id=""
+          value={key.id}
+          readOnly
+        />
+        <input
+          required
+          name="edittittle"
+          className="input-edit"
+          type="text"
+          placeholder="Title of Task"
+        />
+        <textarea
+          required
+          name="editcontent"
+          className="textarea-edit"
+          placeholder="Content of Task"
+        />
+        <fieldset className={ darkmodevalid !== "true" ? "fieldset-edit formdark" : "fieldset-edit" }>
+          <legend>Task Completed</legend>
+          <div>
+            <input
+              required
+              type="radio"
+              name="editcompletedtask"
+              id="completedtrue"
+              value={true}
+            />
+            <label htmlFor="completedtrue">
+              <span>True</span>
+            </label>
+          </div>
+          <div>
+            <input
+              required
+              type="radio"
+              name="editcompletedtask"
+              id="completedfalse"
+              value={false}
+            />
+            <label htmlFor="completedfalse">
+              <span>False</span>
+            </label>
+          </div>
+        </fieldset>
+        <div className="buttonsbox-editform">
+          <input className="submit" type="submit" value="Update" />
+          <a className="cancel" href={`/plat/${key.id}`}>
+            Cancel
+          </a>
         </div>
-    );
-}
+      </form>
+    </div>
+  );
+};
 
 export default Edittask;

@@ -6,8 +6,16 @@ const Deletetask = () => {
 
     const rota = key.username.replace(/\s/g, '').toLowerCase()
 
+    var darkmodevalid = localStorage.getItem("Darkmode");
+
+    var body = document.querySelector("body");
+  
+    darkmodevalid !== "true"
+      ? body.classList.add("backgrounddark")
+      : body.classList.remove("backgrounddark");
+
     return (
-        <form action={`http://localhost:4000/delete/${rota}`} className='deletetask-component' method='post'> 
+        <form action={`http://localhost:4000/delete/${rota}`} className={ darkmodevalid !== "true" ? "deletetask-component formdark" : "deletetask-component" } method='post'> 
             <input name='deletetaskid' className='some' type="text" readOnly value={task.id} />
             <input name='iduser' className='some' type="text" readOnly value={key.id} />
            <div className='answer'>

@@ -11,6 +11,7 @@
     border-radius: 15px;
     padding: 2px;
     box-shadow: 5px 9px 10px rgba(0, 0, 0, 0.493);
+
 }
 .form-edit {
     display: flex;
@@ -72,3 +73,12 @@
     color:red;
     transition: .4s;
 }
+
+/*darkmode*/ 
+
+.formdark {
+    background-color: #1a1c1e;
+    color: white;
+    border-color: white;
+}
+    

@@ -31,7 +31,7 @@ const MenuPlat = ({ user, taskcompleted, alltasks, notcompleted }) => {
     var icons = document.querySelectorAll('.icon')
 
 
-
+    
     var darkmodevalid = localStorage.getItem('Darkmode')
 
     //functions 
