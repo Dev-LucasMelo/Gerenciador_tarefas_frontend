@@ -3,7 +3,6 @@ import './tasks.css'
 
 import { FaRegEdit, FaTrashAlt } from 'react-icons/fa'
 
-
 const Tasks = ({ data, rota, opt }) => {
     const [validation, setvalidation] = useState('')
 
@@ -66,16 +65,17 @@ const Tasks = ({ data, rota, opt }) => {
         })
     }
 
+    var darkmodevalid = localStorage.getItem("Darkmode")
 
     return (
         data.map((api, key) => (
 
-            <div key={key} id={api.id} className={`task-component ${api.completed === true ? "completed" : 'uncompleted'} `} >
+            <div key={key} id={api.id} className={`${darkmodevalid !== 'true' ? "task-component taskdark" : "task-component" } ${api.completed === true ? "completed" : 'uncompleted'} `} >
                 <div className="title-task">
                     {api.tittletask}
                     <div className='box-icons ' >
-                        <a className='link-icon' href={validation === undefined ? '' : `/plat/edit/${rota}`} ><button value={api.id} onClick={edittask} ><FaRegEdit className='icon' /></button> </a>
-                        <a href={idtask === '' ? ' ' : `/plat/delete/${idtask}`}  >  <button value={api.id} onClick={Deletetask}> <FaTrashAlt className='icon' /></button> </a>
+                        <a className='link-icon' href={validation === undefined ? '' : `/plat/edit/${rota}`} ><button value={api.id} onClick={edittask} ><FaRegEdit className={darkmodevalid !== 'true' ? "icon taskdark" : "icon"} /></button> </a>
+                        <a href={idtask === '' ? ' ' : `/plat/delete/${idtask}`}  >  <button value={api.id} onClick={Deletetask}> <FaTrashAlt className={darkmodevalid !== 'true' ? "icon taskdark" : "icon"} /></button> </a>
                     </div>
                 </div>
                 <div className="content-task">

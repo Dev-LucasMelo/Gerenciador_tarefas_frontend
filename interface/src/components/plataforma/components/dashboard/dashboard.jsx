@@ -6,6 +6,7 @@ import Tasks from '../tasks/tasks';
 import './dashboard.css'
 
 const Dashboard = ({user, opt}) => {
+    var darkmodevalid = localStorage.getItem("Darkmode")
     const [apitasks,setapitasks] = useState([])
         
     useEffect(()=> {
@@ -13,9 +14,9 @@ const Dashboard = ({user, opt}) => {
             setapitasks(json.data)
         })
     },[])
-
+  
     return (
-        <section className='dashboard-component'>
+        <section className={darkmodevalid !== 'true' ? "dashboard-component backgrounddark" : "dashboard-component" } >
             <Tasks opt={opt} data={apitasks} rota={user.username.replace(/\s/g, '').toLowerCase()} />
         </section>
     );

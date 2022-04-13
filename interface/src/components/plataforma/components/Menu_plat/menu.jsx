@@ -9,11 +9,11 @@ import { GrUser, GrUserFemale } from 'react-icons/gr'
 import { MdAddTask } from 'react-icons/md'
 
 
-const MenuPlat = ({ user,taskcompleted,alltasks,notcompleted }) => {
+const MenuPlat = ({ user, taskcompleted, alltasks, notcompleted }) => {
     //states
     var [icon, seticon] = useState(1)
-    var [darkbuttonclick, setdarkbuttonclick] = useState(1)
-    var [darkmodeoff, setdarkmodeon] = useState('')
+    var [clickdarkmode, setclickdarkmode] = useState('')
+
 
     //elementos html
 
@@ -25,12 +25,14 @@ const MenuPlat = ({ user,taskcompleted,alltasks,notcompleted }) => {
     var buttondarkmode = document.querySelector('.button-darkmode')
     var sol = document.querySelector('.sol')
     var lua = document.querySelector('.lua')
-
-    // html function no darkmode 
     var menucomp = document.querySelector('.menu-component')
-    var items = document.querySelectorAll('.p-meio-menu')
+    var dashboard = document.querySelector('.dashboard-component')
+    var taskcomp = document.querySelectorAll('.task-component')
+    var icons = document.querySelectorAll('.icon')
 
 
+
+    var darkmodevalid = localStorage.getItem('Darkmode')
 
     //functions 
 
@@ -63,28 +65,41 @@ const MenuPlat = ({ user,taskcompleted,alltasks,notcompleted }) => {
             sol.classList.remove('center')
             lua.classList.remove('center')
         } else {
-            darkmodeoff === true ? sol.classList.add('some') : sol.classList.remove('some')
-            darkmodeoff === true ? lua.classList.add('center') : sol.classList.add('center')
-            darkmodeoff === true ? lua.classList.remove('some') : lua.classList.add('some')
+            darkmodevalid === 'false' ? sol.classList.add('some') : sol.classList.remove('some')
+            darkmodevalid === 'true' ? lua.classList.add('some') : lua.classList.remove('some')
+            sol.classList.add('center')
+            lua.classList.add('center')
         }
+    }
+    //darkmode 
+    function darkmode() {
+
+        clickdarkmode % 2 === 0 ? localStorage.setItem('Darkmode', true) : localStorage.setItem('Darkmode', false)
+
+        darkmodevalid === 'true' ? buttondarkmode.classList.add('dark') : buttondarkmode.classList.remove('dark')
+        darkmodevalid === 'false' ? buttondarkmode.classList.add('light') : buttondarkmode.classList.remove('light')
+        //darkmode
+
+        darkmodevalid === "true" ? dashboard.classList.add("backgrounddark") : dashboard.classList.remove("backgrounddark")
+
+        darkmodevalid === "true" ? taskcomp.forEach((i) => {
+            i.classList.add("taskdark")
+        }) : taskcomp.forEach((i) => {
+            i.classList.remove("taskdark")
+        })
+
+        darkmodevalid === "true" ? icons.forEach((i) => {
+            i.classList.add("taskdark")
+        }) : icons.forEach((i) => {
+            i.classList.remove("taskdark")
+        })
+
+
+        // 
+        setclickdarkmode(++clickdarkmode)
     }
 
 
-    function darkmode() {
-        setdarkbuttonclick(++darkbuttonclick)
-
-        darkbuttonclick % 2 === 0 ? buttondarkmode.classList.add('dark') : buttondarkmode.classList.remove('dark')
-        darkbuttonclick % 2 === 0 ? setdarkmodeon(true) : setdarkmodeon(false)
-
-        darkmodeoff !== true ? menucomp.classList.add('menudarkmode') : menucomp.classList.remove('menudarkmode')
-
-        // eslint-disable-next-line no-unused-expressions
-        darkmodeoff !== true ? items.forEach((i) => {
-            i.classList.add('p-meio-menu-dark')
-        }) : items.forEach((i) => {
-            i.classList.remove('p-meio-menu-dark')
-        })
-    } 
 
     //exit 
 
@@ -93,7 +108,7 @@ const MenuPlat = ({ user,taskcompleted,alltasks,notcompleted }) => {
     }
 
     return (
-        <header className='menu-component ' >
+        <header className={darkmodevalid !== "true" ? "menu-component menudarkmode" : "menu-component"} >
 
             <div className='topo-menu ' >
                 <div className='close'>
@@ -112,17 +127,17 @@ const MenuPlat = ({ user,taskcompleted,alltasks,notcompleted }) => {
                     <h2 className='tittle' >Dashboard</h2>
                 </div>
                 <div className='meio-menu-content'>
-                    <p onClick={alltasks} className='p-meio-menu'><FaClipboardList className='icon-menu' /> <span className='text'>All tasks</span> </p>
-                    <p onClick={notcompleted} className='p-meio-menu'><BiTaskX className='icon-menu' /> <span className='text'>Tasks not completed</span> </p>
-                    <p onClick={taskcompleted} className='p-meio-menu'><BiTask className='icon-menu' /><span className='text'>Tasks completed</span> </p>
-                    <a className='link-createtask' href={`/plat/create/${user.username.replace(/\s/g, '').toLowerCase()}`}><p className='p-meio-menu'><MdAddTask className='icon-menu' /><span className='text'>Add Task</span> </p></a> 
-                    <a className='link-createtask' href="/"><p onClick={Exit} className='p-meio-menu'><BiExit className='icon-menu' /><span className='text'>Exit</span> </p></a> 
+                    <p onClick={alltasks} className={darkmodevalid !== "true" ? "p-meio-menu p-meio-menu-dark" : "p-meio-menu"}><FaClipboardList className='icon-menu' /> <span className='text'>All tasks</span> </p>
+                    <p onClick={notcompleted} className={darkmodevalid !== "true" ? "p-meio-menu p-meio-menu-dark" : "p-meio-menu"}><BiTaskX className='icon-menu' /> <span className='text'>Tasks not completed</span> </p>
+                    <p onClick={taskcompleted} className={darkmodevalid !== "true" ? "p-meio-menu p-meio-menu-dark" : "p-meio-menu"}><BiTask className='icon-menu' /><span className='text'>Tasks completed</span> </p>
+                    <a className='link-createtask' href={`/plat/create/${user.username.replace(/\s/g, '').toLowerCase()}`}><p className={darkmodevalid !== "true" ? "p-meio-menu p-meio-menu-dark" : "p-meio-menu"}><MdAddTask className='icon-menu' /><span className='text'>Add Task</span> </p></a>
+                    <a className='link-createtask' href="/"><p onClick={Exit} className={darkmodevalid !== "true" ? "p-meio-menu p-meio-menu-dark" : "p-meio-menu"}><BiExit className='icon-menu' /><span className='text'>Exit</span> </p></a>
                 </div>
             </div>
             <div className='fim-menu' >
 
                 <div className='button-box'>
-                    <FaSun className='sol' /> <button onClick={darkmode} className='button-darkmode'><div className='content-darkmode'>'</div></button> <FaMoon className='lua' />
+                    <FaSun className='sol' /> <button onClick={darkmode} className={`${darkmodevalid !== 'true' ? "button-darkmode dark" : "button-darkmode light"}`}><div className='content-darkmode '>'</div></button> <FaMoon className='lua' />
                 </div>
             </div>
 

@@ -9,6 +9,7 @@
     height: max-content;
     padding: 10px;
     border-radius: 20px;
+    transition: .3s;
 }
 .title-task {
     width: 100%;
@@ -60,4 +61,9 @@ button {
 }
 .uncompleted {
     border-left: 15px solid red;
+}
+/*darkmode*/
+.taskdark{
+    background-color: #1a1c1e;
+    color: white;
 }
