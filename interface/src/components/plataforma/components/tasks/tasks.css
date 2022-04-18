@@ -67,3 +67,37 @@ button {
     background-color: #1a1c1e;
     color: white;
 }
+@media (max-width:700px) {
+    .box-icons { 
+        margin-right: 1%;
+    }
+    .content-task {
+        width: 95%;
+        
+    }
+}
+@media (max-width:595px) {
+    .title-task,.icon{
+        font-size: 19px;
+    }
+    .box-icons { 
+        margin-right: 3%;
+    }
+    .content-task {
+        width: 94%;
+        font-size: 16px;
+    }
+}
+@media (max-width:495px) {
+    .title-task,.icon{
+        font-size: 18px;
+    }
+    .box-icons { 
+        margin-right: 9%;
+    }
+    .content-task {
+        width: 91%;
+        font-size: 15px;
+        
+    }
+}

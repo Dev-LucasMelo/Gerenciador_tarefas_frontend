@@ -1,215 +1,264 @@
 /*Ornaização Geral */
 .menu-component {
-    z-index: 10;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    border: 1px solid;
-    width: 18%;
-    height: 100vh;
-    padding: 10px;
-    background-color: white;
-    transition: .3s;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border: 1px solid;
+  width: 18%;
+  height: 100vh;
+  padding: 10px;
+  background-color: white;
+  transition: 0.3s;
+  min-width: 140px;
+  max-width: 150px;
+  min-height: 100vh;
+  padding-right: 15px;
 }
 
 .topo-menu {
-    width: 100%;
-    flex: 3;
-    border-bottom: 1px solid;
+  width: 100%;
+  flex: 3;
+  border-bottom: 1px solid;
 }
-
 .meio-menu {
-    width: 100%;
-    flex: 5;
-    border-bottom: 1px solid;
+  width: 100%;
+  flex: 5;
+  border-bottom: 1px solid;
 }
-
 .fim-menu {
-    width: 100%;
-    flex: 2;
+  width: 100%;
+  flex: 2;
 }
-
 /*partes */
 .topo-menu {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .user {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex: 2;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 2;
 }
 
 .usericon {
-    border: 1px solid;
-    padding: 5px;
-    border-radius: 50%;
-    font-size: 40px;
-    color: inherit;
-    background-color: white;
+  border: 1px solid;
+  padding: 5px;
+  border-radius: 50%;
+  font-size: 40px;
+  color: inherit;
+  background-color: white;
 }
 
 .close {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex: 1;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
 }
 
 .close-button {
-    cursor: pointer;
-
+  cursor: pointer;
 }
 
 .meio-menu {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .meio-menu-content {
-    width: inherit;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  width: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .p-meio-menu {
-    width: 100%;
-    padding: 2px;
-    display: flex;
-    align-items: center;
-    margin: 15px auto;
-    color: #afb4c7;
-    cursor: pointer;
-    border: 1px solid transparent;
-    font-size: 15px;
-    border-radius: 10px;
-    transition: all ease-in 0.2s;
+  width: 100%;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  margin: 15px auto;
+  color: #afb4c7;
+  cursor: pointer;
+  border: 1px solid transparent;
+  font-size: 15px;
+  border-radius: 10px;
+  transition: all ease-in 0.2s;
 }
 
 .p-meio-menu:hover {
-    background-color: #ebf0fe;
-    border: 1px solid black;
-    color: black;
+  background-color: #ebf0fe;
+  border: 1px solid black;
+  color: black;
 }
 
 .icon-menu {
-    margin: 0 5px 0 0;
-    padding: 3px;
-    text-align: center;
-    border-radius: 50%;
-    border: 2px solid;
-    color: inherit;
-    color: inherit;
+  margin: 0 5px 0 0;
+  padding: 3px;
+  text-align: center;
+  border-radius: 50%;
+  border: 2px solid;
+  color: inherit;
+  color: inherit;
 }
 
 .text {
-    color: #afb4c7;
-    color: inherit;
+  color: #afb4c7;
+  color: inherit;
 }
 
 .fim-menu {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-evenly;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
 }
 
 .button-box {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
 }
 
 .button-darkmode {
-    cursor: pointer;
-    background-color: transparent;
-    border: 2px solid #afb4c7;
-    width: 65px;
-    padding: 4px 8px;
-    border-radius: 100px;
-    background-color: #ebf0fe;
+  cursor: pointer;
+  background-color: transparent;
+  border: 2px solid #afb4c7;
+  width: 65px;
+  padding: 4px 8px;
+  border-radius: 100px;
+  background-color: #ebf0fe;
 }
 
 .button-darkmode:hover {
-    border: 2px solid inherit;
-    background-color: #ebf0fe;
+  border: 2px solid inherit;
+  background-color: #ebf0fe;
 }
 
 .content-darkmode {
-    height: 100%;
-    background-color: black;
-    width: 36%;
-    border: 1px solid black;
-    border-radius: 50%;
+  height: 100%;
+  background-color: black;
+  width: 36%;
+  border: 1px solid black;
+  border-radius: 50%;
 }
 
 /*CLASSES DE ANIMAÇÃ0*/
 .some {
-    display: none;
-    transition: .2s;
+  display: none;
+  transition: 0.2s;
 }
-
 .center {
-    margin: 0 auto;
-    border: 2px solid;
-    color: inherit;
-    font-size: 35px;
-    transition: .2s;
-    border-radius: 50%;
-    padding: 3px;
+  margin: 0 auto;
+  border: 2px solid;
+  color: inherit;
+  font-size: 35px;
+  transition: 0.2s;
+  border-radius: 50%;
+  padding: 3px;
 }
 
 .dark {
-    display: flex;
-    align-items: center;
-    justify-content: end;
+  display: flex;
+  align-items: center;
+  justify-content: end;
 }
 
 .light {
-    display: flex;
-    align-items: center;
-    justify-content: start;
+  display: flex;
+  align-items: center;
+  justify-content: start;
 }
 
 .menucompclosed {
-    width: 8%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: .3s;
+  width: 8%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+  min-width: 90px;
+  max-width: 90px;
 }
 
 .link-createtask {
-    text-align: start;
-    width: 100%;
+  text-align: start;
+  width: 100%;
 }
-
 /*DARKMODE CLASSES*/
-
 .menudarkmode {
-    background-color: #1a1c1e;
-    color: white;
+  background-color: #1a1c1e;
+  color: white;
 }
 
 .p-meio-menu-dark {
-    color: white;
+  color: white;
 }
 
 .p-meio-menu-dark:hover {
-    background-color: #303234;
-    border: 1px solid transparent;
-    color: white;
+  background-color: #303234;
+  border: 1px solid transparent;
+  color: white;
+}
+/*Responsividade*/
+/*Altura*/
+@media (min-height: 370px) {
+  /*topo*/
+  .usericon {
+    font-size: 30px;
+  }
+  .nickname {
+    font-size: 20px;
+  }
+  /*Meio*/
+  .p-meio-menu {
+    margin: 10px auto;
+  }
+  /*Animação*/
+  .center {
+    font-size: 32px;
+  }
+}
+@media (min-height: 675px) {
+  .topo-menu {
+    flex: 3;
+  }
+  .meio-menu {
+    flex: 7;
+  }
+  .fim-menu {
+    flex: 2;
+  }
+  .p-meio-menu {
+    margin: 14px auto;
+  }
+}
+
+/*Largura*/
+@media (max-width: 680px) {
+  .menu-component {
+    width: 17%;
+    min-width: 130px;
+    max-width: 130px;
+  }
+  .menucompclosed{
+      min-width: 50px;
+      max-width: 50px;
+  }
+  .icon-menu {
+    margin: 0 7px 0 0;
+  }
 }

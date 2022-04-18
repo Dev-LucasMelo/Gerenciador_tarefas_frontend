@@ -7,6 +7,7 @@
 body {
     background: url(https://static.vecteezy.com/system/resources/previews/000/461/362/original/workspace-in-room-vector.jpg);
     background-size: cover;
+   
 }
 a {
     text-decoration: none;
@@ -16,3 +17,5 @@ a {
 label,input{
     cursor: pointer;
 }
+
+
