@@ -19,7 +19,7 @@ const CreateTask = () => {
         <h1>Create Task </h1>
       </div>
       <form
-        action={`http://localhost:4000/createtask`}
+        action={`https://lucasgerenciadorapi.herokuapp.com/createtask`}
         className="form-edit"
         method="post"
       >

@@ -80,7 +80,7 @@ const Cadastro = ({ api }) => {
                 <AiOutlineForm className='cadastro-icon' />
                 <h1 className='tittle-cadastro'>Create your account</h1>
             </header>
-            <form className='form-cadastro' action="http://localhost:4000/cadastro" method='post' >
+            <form className='form-cadastro' action="https://lucasgerenciadorapi.herokuapp.com/cadastro" method='post' >
 
                 <p className='tittle-input cadastro-indent' >Username</p>
                 <input type="text"

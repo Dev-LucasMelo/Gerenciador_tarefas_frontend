@@ -22,7 +22,7 @@ const Edittask = () => {
         <h1>Edit Task</h1>
       </div>
       <form
-        action={`http://localhost:4000/edittask/${rota}`}
+        action={`https://lucasgerenciadorapi.herokuapp.com/edittask/${rota}`}
         className="form-edit"
         method="post"
       >
